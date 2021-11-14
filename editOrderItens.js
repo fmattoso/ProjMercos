@@ -9,6 +9,7 @@ function getInfoProd() {
             }
             // Alguns produtos só podem ser vendidos em quantidades múltiplas de um determinado número ...
             $('#precoProd').val(dados['preco']);
+            $('#precoProd').attr("min", (dados['preco']*0.9));
             $('#qtdProd').val(step);
             $('#qtdProd').attr("step", step);
             $('#qtdProd').attr("min", step);

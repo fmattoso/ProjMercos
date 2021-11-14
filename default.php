@@ -45,7 +45,7 @@
                     <h2>Código Fonte</h2>
                     <p>O código fonte deste projeto pode ser encontrado no GitHub.</p>
                     <ul class="icon-list">
-                    <li><a href="">Repositório deste projeto</a></li>
+                    <li><a href="https://github.com/fmattoso/ProjMercos">Repositório deste projeto no GitHub</a></li>
                     <li><a href="https://www.linkedin.com/in/fabiano-mattoso-70983529/">Meu perfil no LinkedIn</a></li>
                     </ul>
                 </div>

@@ -52,6 +52,16 @@
         $_SESSION['idPedido'] = $row['id'];
     }
 
+    // Verificar a rentabilidade ...
+    $sql = "SELECT precoUnitario FROM produto WHERE id = " . $idProduto;
+    $query = $mysqli->query($sql);
+    $row = $query->fetch_array();
+    if ($row) {
+        if ($precoProd < ($row['precoUnitario'] * 0.9)) {
+            $json = array("status" => 300, "msg" => "Erro: Rentabilidade ruim. Aumente o valor do preço do produto.");
+        }
+    }
+
     if (isset($json)) {
         echo json_encode($json);
         exit;

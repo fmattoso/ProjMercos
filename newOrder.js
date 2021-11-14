@@ -7,8 +7,10 @@ function getInfoProd() {
             if (dados['multiplo'] != null) {
                 step = dados['multiplo'];
             }
-            // Alguns produtos só podem ser vendidos em quantidades múltiplas de um determinado número ...
+            // Alguns produtos só podem ser vendidos em quantidades múltiplas de um determinado número
+            // Itens que ficarem com rentabilidade ruim não podem ser inseridos no pedido
             $('#precoProd').val(dados['preco']);
+            $('#precoProd').attr("min", (dados['preco']*0.9));
             $('#qtdProd').val(step);
             $('#qtdProd').attr("step", step);
             $('#qtdProd').attr("min", step);

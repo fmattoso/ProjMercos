@@ -109,7 +109,7 @@
                                 <div class="row">
                                     <div class="col-md-6 ms-auto">
                                         <label for="precoProd" class="form-label">Preço:</label>
-                                        <input type="number" class="form-control" name="precoProd" id="precoProd" placeholder="0.00" step="0.01" min="0" required>
+                                        <input type="number" class="form-control" name="precoProd" id="precoProd" placeholder="0.00" step="0.01" required>
                                     </div>
                                     <div class="col-md-6 ms-auto">
                                         <label for="qtdProd" class="form-label">Quantidade:</label>
