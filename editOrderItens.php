@@ -1,10 +1,4 @@
 <?php
-/* Informa o nível dos erros que serão exibidos */
-    error_reporting(E_ALL);
- 
-    /* Habilita a exibição de erros */
-    ini_set("display_errors", 1);
-
     session_start();
 
     include "incConstants.php";
@@ -51,7 +45,7 @@
     }
 
     $lisProd = '';
-    $sql = "SELECT `id`, `nome` FROM `produto` ORDER BY `nome`";
+    $sql = "SELECT id, nome FROM produto ORDER BY nome";
     $query = $mysqli->query($sql);
     while ($row = $query->fetch_array()) {
         $lisProd .= '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
@@ -149,6 +143,14 @@
             </div>
             
         </main>
+
+        <footer>
+            <p>
+                <a class="btn btn-primary me-2" href="/default.php" role="button" rel="prev"><?php print $icoInicio; ?> Principal</a>
+                <a class="btn btn-primary me-2" href="/editOrder.php" role="button" rel="prev"><?php print $icoCheck; ?> Pedidos</a>
+            </p>
+        </footer>
+
     </div>
 
 </body>

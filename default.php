@@ -6,6 +6,7 @@
 <html lang="pt">
 <head>
     <?php include "defHeader.php" ?>
+    <script src="/bootstrap5/js/bootstrap.bundle.min.js"></script>    
 </head>
 <body>
     <div class="col-lg-8 mx-auto p-3 py-md-5">
@@ -25,8 +26,8 @@
             </p>
 
             <div class="mb-5">
-                <a href="/newOrder.php" class="btn btn-primary btn-lg px-4">Novo Pedido</a>
-                <a href="/editOrder.php" class="btn btn-primary btn-lg px-4">Editar Pedido</a>
+                <a href="/newOrder.php" class="btn btn-primary btn-lg px-4 me-2">Novo Pedido</a>
+                <a href="/editOrder.php" class="btn btn-primary btn-lg px-4 me-2">Editar Pedido</a>
             </div>
 
             <hr class="col-3 col-md-2 mb-5">
@@ -36,8 +37,8 @@
                     <h2>Métricas</h2>
                     <p>Sugestão de projeto, um controle de pedidos para jedi, padawans e stormtroopers descolados.</p>
                     <ul class="icon-list">
-                        <li><a href="https://github.com/twbs/bootstrap-npm-starter" rel="noopener" target="_blank">Requisitos</a></li>
-                        <li class="text-muted">Regras de Negócio</li>
+                        <li><a href="#"  data-bs-toggle="modal" data-bs-target="#dlgInfoRequisitos" rel="noopener" target="_blank">Requisitos</a></li>
+                        <li><a href="#"  data-bs-toggle="modal" data-bs-target="#dlgInfoRegras" rel="noopener" target="_blank" >Regras de Negócio</a></li>
                     </ul>
                 </div>
 
@@ -45,17 +46,98 @@
                     <h2>Código Fonte</h2>
                     <p>O código fonte deste projeto pode ser encontrado no GitHub.</p>
                     <ul class="icon-list">
-                    <li><a href="https://github.com/fmattoso/ProjMercos">Repositório deste projeto no GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/fabiano-mattoso-70983529/">Meu perfil no LinkedIn</a></li>
+                    <li><a href="https://github.com/fmattoso/ProjMercos" target="_blank">Repositório deste projeto no GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/fabiano-mattoso-70983529/" target="_blank">Meu perfil no LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
+
+            <div class="modal fade" id="dlgInfoRequisitos" tabindex="-1" aria-labelledby="dlgInfoRequisitosLabel" aria-hidden="true" role="dialog">
+                <div class="modal-dialog modal-dialog-scrollable">
+                        <!-- Corpo -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="dlgInfoRequisitosLabel">Requisitos</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Uma aplicação web simulando de forma simplificada a emissão de pedidos.</p>
+                                <p>O usuário desta aplicação poderá ​criar novos pedidos e ​alterar os pedidos existentes. Portanto, é indispensável que estas informações sejam armazenadas de forma persistente.
+                                   Um​ ​pedido​ ​é​ ​composto​ ​pelas​ ​seguintes​ ​informações:</p>
+                                <p>Cliente: O usuário deve escolher uma opção entre os clientes pré-cadastrados no sistema (tabela​ ​1).​</p>
+                                <p>Itens:​​ ​Cada​ ​item​ ​do​ ​pedido​ ​é​ ​composto​ ​pelas​ ​seguintes​ ​informações:
+                                <ul><li>Produto: o usuário deve escolher uma opção entre os produtos pré-cadastrados no sistema​ ​(tabela​ ​2).​</li>
+                                <li>Quantidade:​​ ​a​ ​quantidade​ ​do​ ​produto​ ​deve​ ​ser​ ​um​ ​número​ ​inteiro​ ​maior​ ​que​ ​zero.</li>
+                                <li>Preço unitário: o sistema deve sugerir o preço unitário do produto, mas deve permitir que o usuário o altere (tanto para mais quanto para menos). O preço deve ter no máximo​ ​2​ ​casas​ ​decimais​ ​e​ ​precisa​ ​ser​ ​maior​ ​que​ ​zero.</li>
+                                </ul>
+                                <h5>Informações pré-cadastradas</h5>
+                                <p>A tabelas a seguir listam as informações utilizadas no pedido que devem ser pré-cadastradas no sistema.<p>
+                                <table>
+                                    <caption>Clientes</caption>
+                                    <thead>
+                                        <tr><th>ID</th><th>Nome</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>Darth​ ​Vader</td></tr>
+                                        <tr><td>2</td><td>Obi-Wan​ ​Kenobi</td></tr>
+                                        <tr><td>3</td><td>Luke​ ​Skywalker</td></tr>
+                                        <tr><td>4</td><td>Imperador​ ​Palpatine</td></tr>
+                                        <tr><td>5</td><td>Han​ ​Solo</td></tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <caption>Produtos</caption>
+                                    <thead>
+                                        <tr><th>ID</th><th>Nome</th><th>Preço Unitário (R$)</th><th>Múltiplo</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>Millenium​ ​Falcon</td><td>550.000,00</td><td></td></tr>
+                                        <tr><td>2</td><td>X-Wing 60.000,00</td><td>2</td><td></td></tr>
+                                        <tr><td>3</td><td>Super​ ​Star​ ​Destroyer</td><td>4.570.000,00</td><td></td></tr>
+                                        <tr><td>4</td><td>TIE​ ​Fighter</td><td>75.000,00</td><td>2</td></tr>
+                                        <tr><td>5</td><td>Lightsaber</td><td>6.000,00</td><td>5</td></tr>
+                                        <tr><td>6</td><td>DLT-19​ ​Heavy​ ​Blaster​ ​Rifle</td><td>5.800,00</td><td></td></tr>
+                                        <tr><td>7</td><td>DL-44​ ​Heavy​ ​Blaster​ ​Pistol</td><td>1.500,00</td><td>10</td></tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="dlgInfoRegras" tabindex="-1" aria-labelledby="dlgInfoRegrasLabel" aria-hidden="true" role="dialog">
+                <div class="modal-dialog modal-dialog-scrollable">
+                        <!-- Corpo -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="dlgInfoRegras">Regras de Negócio</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <h5>Rentabilidade</h5>
+                            <p>Os itens do pedido devem ser classificados em três níveis de rentabilidade, de acordo com a diferença entre o preço do item (que é informado pelo usuário) e o preço do produto​ ​(que​ ​é​ ​fixo):</p>
+                            <p><dfn>Rentabilidade ótima</dfn>: quando o preço usado no pedido é maior que o preço do produto. Ex: se o preço do produto é de R$ 100, a rentabilidade será ótima se o item for​ ​vendido​ ​por​ ​R$​ ​100,01​ ​(inclusive)​ ​ou​ ​mais.</p>
+                            <p><dfn>Rentabilidade boa</dfn>: quando o preço do item é no máximo 10% menor que o preço do produto. Ex: se o preço do produto é de R$ 100, a rentabilidade será boa se o item for vendido​ ​por​ ​qualquer​ ​preço​ ​entre​ ​R$​ ​90​ ​(inclusive)​ ​e​ ​R$​ ​100​ ​(inclusive).</p>
+                            <p><dfn>Rentabilidade ruim</dfn>: quando o preço do item é inferior ao preço do produto menos 10%. Ex: se o preço do produto é de R$ 100, a rentabilidade será ruim se o preço for menor​ ​ou​ ​igual​ ​a​ ​R$​ ​89,99.</p>
+                            <p>Quando o usuário escolher o produto para inserir no pedido, o sistema deve calcular e exibir a rentabilidade na tela. Sempre que o preço for modificado, a rentabilidade deve ser recalculada e reexibida. Itens que ficarem com rentabilidade ruim não podem ser inseridos no pedido.</p>
+                            <h5>Múltiplo de venda</h5>
+                            <p>Alguns produtos só podem ser vendidos em quantidades múltiplas de um determinado número. Por exemplo, o produto X-Wing só pode ser vendido em múltiplos de 2, por exemplo, 2, 4, 6, 8, etc. Já o produto Lightsaber só pode ser vendido em múltiplos de 5, ou seja, 5, 10, 15, 20 e assim por diante. Produtos que não possuem múltiplos podem ser vendidos​ ​em​ ​qualquer​ ​quantidade.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <?php include "defFooter.php" ?>
     </div>
-
-    <script src="/bootstrap5/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

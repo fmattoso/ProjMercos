@@ -56,7 +56,13 @@
             </div>
 
         </main>
-    </div>
 
+        <footer>
+            <p>
+                <a class="btn btn-primary me-2" href="/default.php" role="button" rel="prev"><?php print $icoInicio; ?> Principal</a>
+            </p>
+        </footer>
+    </div>
+ 
 </body>
 </html>
