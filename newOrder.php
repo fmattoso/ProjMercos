@@ -33,7 +33,9 @@
     $totPedido = 0;
     $qtdItens = 0;
     $pedNum = '';
+    $sendMe = 0;
     if (isset($_SESSION['idCliente'])) {
+        $sendMe = $_SESSION['idCliente'];
         $sql =  "SELECT pit.id, prd.nome, pit.idPedido, pit.precoUnitario, pit.quantidade,"; 
         $sql .= "CASE ";
         $sql .= "  WHEN (pit.precoUnitario > prd.precoUnitario) THEN 'ótima' ";
@@ -171,6 +173,7 @@
         <footer>
             <p>
                 <a class="btn btn-primary me-2" href="/default.php" role="button" rel="prev"><?php print $icoInicio; ?> Principal</a>
+                <button type="button" class="btn btn-primary me-2" id="btnSendOrder" onclick="btnSendClick(<?php print $sendMe; ?>)"><?php print $icoSend; ?> Enviar Pedido</button>
             </p>
         </footer>
     </div>

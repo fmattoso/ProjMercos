@@ -65,6 +65,15 @@ function deleteItem() {
     })
 }
 
+function btnSendClick(idCliente) {
+    $.post('/sendOrder.php', {id: idCliente},
+    function(dados) {
+        if (dados != '' && dados != null) {
+            location.reload();
+        }
+    })
+}
+
 // "Máquina de estados" principal ...
 $(document).ready(function(){
     // Variavel com scopo do documento
